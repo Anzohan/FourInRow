@@ -1,0 +1,36 @@
+<resources>
+
+    <!--Main Menu -->
+    <dimen name="game_label_margin_top">50dp</dimen>
+    <dimen name="begin_play_btn_margin_top">100dp</dimen>
+    <dimen name="btns_margin_top">15dp</dimen>
+    <dimen name="btn_main_width">333.33dp</dimen>
+    <dimen name="btn_main_height">133.33dp</dimen>
+
+    <!--Select Difficulty -->
+    <dimen name="radio_button_width">488.88dp</dimen>
+    <dimen name="radio_button_height">66.66dp</dimen>
+    <dimen name="radio_group_padding_left">22.22dp</dimen>
+    <dimen name="radio_group_margin_top">22.22dp</dimen>
+    <dimen name="select_figure_margin_top">20dp</dimen>
+    <dimen name="play_btn_margin_top">20dp</dimen>
+    <dimen name="play_btn_margin_bottom">20dp</dimen>
+
+    <!--Game Field -->
+    <dimen name="game_control_button_margin_top">44.44dp</dimen>
+    <dimen name="game_control_button_margin_left">200dp</dimen>
+    <dimen name="rate_label_margin_bottom">22.22dp</dimen>
+    <dimen name="winner_label_margin_top">20dp</dimen>
+    <dimen name="label_margin_bottom">11.11dp</dimen>
+    <dimen name="cell_size">100dp</dimen>
+    <dimen name="game_field_btn_width">333.33dp</dimen>
+    <dimen name="game_field_btn_height">88.88dp</dimen>
+
+    <!--Rules -->
+    <dimen name="back_rules_btn_margin_bottom">20dp</dimen>
+    <dimen name="rules_text_padding">9dp</dimen>
+
+    <!--Text Sizes -->
+    <dimen name="text_size_medium">40sp</dimen>
+    <dimen name="text_size_large">53.33sp</dimen>
+</resources>

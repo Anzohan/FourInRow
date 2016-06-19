@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+
+    <TextView
+        android:id="@+id/winner_name_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/label_margin_bottom"
+        android:gravity="center"
+        android:textColor="@color/winner_name_color"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/computer_step_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/winner_name_text"
+        android:layout_marginBottom="@dimen/label_margin_bottom"
+        android:gravity="center"
+        android:textColor="@color/computer_step_rate_text_color"
+        android:textSize="@dimen/text_size_medium"/>
+
+    <TextView
+        android:id="@+id/player_step_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/computer_step_rate"
+        android:layout_marginBottom="@dimen/rate_label_margin_bottom"
+        android:gravity="center"
+        android:textColor="@color/player_step_rate_text_color"
+        android:textSize="@dimen/text_size_medium"/>
+
+    <GridLayout
+        android:id="@+id/field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/player_step_rate"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:columnCount="7"
+        android:orientation="horizontal"
+        android:rowCount="7">
+
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_one"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:layout_column="2"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_four"
+            app:lb_view_id="@null"
+            app:left_view_id="@null"
+            app:lt_view_id="@null"
+
+            app:rb_view_id="@+id/cell_five"
+            app:right_view_id="@+id/cell_two"
+            app:rt_view_id="@null"
+            app:top_view_id="@null"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_two"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:layout_column="3"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_five"
+            app:lb_view_id="@+id/cell_four"
+            app:left_view_id="@+id/cell_one"
+            app:lt_view_id="@null"
+
+            app:rb_view_id="@+id/cell_six"
+            app:right_view_id="@+id/cell_tree"
+            app:rt_view_id="@null"
+            app:top_view_id="@null"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_tree"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:layout_column="4"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_six"
+            app:lb_view_id="@+id/cell_five"
+            app:left_view_id="@+id/cell_two"
+            app:lt_view_id="@null"
+
+            app:rb_view_id="@null"
+            app:right_view_id="@null"
+            app:rt_view_id="@null"
+            app:top_view_id="@null"
+            />
+
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_four"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:layout_column="2"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_nine"
+            app:lb_view_id="@+id/cell_eight"
+            app:left_view_id="@null"
+            app:lt_view_id="@null"
+
+            app:rb_view_id="@+id/cell_ten"
+            app:right_view_id="@+id/cell_five"
+            app:rt_view_id="@+id/cell_two"
+            app:top_view_id="@+id/cell_one"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_five"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:layout_column="3"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_ten"
+            app:lb_view_id="@+id/cell_nine"
+            app:left_view_id="@+id/cell_four"
+            app:lt_view_id="@+id/cell_one"
+
+            app:rb_view_id="@+id/cell_eleven"
+            app:right_view_id="@+id/cell_six"
+            app:rt_view_id="@+id/cell_three"
+            app:top_view_id="@+id/cell_two"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_six"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:layout_column="4"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_eleven"
+            app:lb_view_id="@+id/cell_ten"
+            app:left_view_id="@+id/cell_five"
+            app:lt_view_id="@+id/cell_two"
+
+            app:rb_view_id="@+id/cell_twelve"
+            app:right_view_id="@null"
+            app:rt_view_id="@null"
+            app:top_view_id="@+id/cell_tree"
+            />
+
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_seven"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_fourteen"
+            app:lb_view_id="@null"
+            app:left_view_id="@null"
+            app:lt_view_id="@null"
+
+            app:rb_view_id="@+id/cell_fifteen"
+            app:right_view_id="@+id/cell_eight"
+            app:rt_view_id="@null"
+            app:top_view_id="@null"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_eight"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_fifteen"
+            app:lb_view_id="@+id/cell_fourteen"
+            app:left_view_id="@+id/cell_seven"
+            app:lt_view_id="@null"
+
+            app:rb_view_id="@+id/cell_sixteen"
+            app:right_view_id="@+id/cell_nine"
+            app:rt_view_id="@+id/cell_four"
+            app:top_view_id="@null"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_nine"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_sixteen"
+            app:lb_view_id="@+id/cell_fifteen"
+            app:left_view_id="@+id/cell_eight"
+            app:lt_view_id="@null"
+
+            app:rb_view_id="@+id/cell_seventeen"
+            app:right_view_id="@+id/cell_ten"
+            app:rt_view_id="@+id/cell_five"
+            app:top_view_id="@+id/cell_four"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_ten"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_seventeen"
+            app:lb_view_id="@+id/cell_sixteen"
+            app:left_view_id="@+id/cell_nine"
+            app:lt_view_id="@+id/cell_four"
+
+            app:rb_view_id="@+id/cell_eighteen"
+            app:right_view_id="@+id/cell_eleven"
+            app:rt_view_id="@+id/cell_six"
+            app:top_view_id="@+id/cell_five"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_eleven"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_eighteen"
+            app:lb_view_id="@+id/cell_seventeen"
+            app:left_view_id="@+id/cell_ten"
+            app:lt_view_id="@+id/cell_five"
+
+            app:rb_view_id="@+id/cell_nineteen"
+            app:right_view_id="@+id/cell_twelve"
+            app:rt_view_id="@null"
+            app:top_view_id="@+id/cell_six"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_twelve"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_nineteen"
+            app:lb_view_id="@+id/cell_eighteen"
+            app:left_view_id="@+id/cell_eleven"
+            app:lt_view_id="@+id/cell_six"
+
+            app:rb_view_id="@+id/cell_twenty"
+            app:right_view_id="@+id/cell_thirteen"
+            app:rt_view_id="@null"
+            app:top_view_id="@null"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_thirteen"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_twenty"
+            app:lb_view_id="@+id/cell_nineteen"
+            app:left_view_id="@+id/cell_twelve"
+            app:lt_view_id="@null"
+
+            app:rb_view_id="@null"
+            app:right_view_id="@null"
+            app:rt_view_id="@null"
+            app:top_view_id="@null"
+            />
+
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_fourteen"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_twenty_one"
+            app:lb_view_id="@null"
+            app:left_view_id="@null"
+            app:lt_view_id="@null"
+
+            app:rb_view_id="@+id/cell_twenty_two"
+            app:right_view_id="@+id/cell_fifteen"
+            app:rt_view_id="@+id/cell_eight"
+            app:top_view_id="@+id/cell_seven"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_fifteen"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_twenty_two"
+            app:lb_view_id="@+id/cell_twenty_one"
+            app:left_view_id="@+id/cell_fourteen"
+            app:lt_view_id="@+id/cell_seven"
+
+            app:rb_view_id="@+id/cell_twenty_three"
+            app:right_view_id="@+id/cell_sixteen"
+            app:rt_view_id="@+id/cell_nine"
+            app:top_view_id="@+id/cell_eight"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_sixteen"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_twenty_three"
+            app:lb_view_id="@+id/cell_twenty_two"
+            app:left_view_id="@+id/cell_fifteen"
+            app:lt_view_id="@+id/cell_eight"
+
+            app:rb_view_id="@+id/cell_twenty_four"
+            app:right_view_id="@+id/cell_seventeen"
+            app:rt_view_id="@+id/cell_ten"
+            app:top_view_id="@+id/cell_nine"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_seventeen"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_twenty_four"
+            app:lb_view_id="@+id/cell_twenty_three"
+            app:left_view_id="@+id/cell_sixteen"
+            app:lt_view_id="@+id/cell_nine"
+
+            app:rb_view_id="@+id/cell_twenty_five"
+            app:right_view_id="@+id/cell_eighteen"
+            app:rt_view_id="@+id/cell_eleven"
+            app:top_view_id="@+id/cell_ten"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_eighteen"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_twenty_five"
+            app:lb_view_id="@+id/cell_twenty_four"
+            app:left_view_id="@+id/cell_seventeen"
+            app:lt_view_id="@+id/cell_ten"
+
+            app:rb_view_id="@+id/cell_twenty_six"
+            app:right_view_id="@+id/cell_nineteen"
+            app:rt_view_id="@+id/cell_twelve"
+            app:top_view_id="@+id/cell_eleven"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_nineteen"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_twenty_six"
+            app:lb_view_id="@+id/cell_twenty_five"
+            app:left_view_id="@+id/cell_eighteen"
+            app:lt_view_id="@+id/cell_eleven"
+
+            app:rb_view_id="@+id/cell_twenty_seven"
+            app:right_view_id="@+id/cell_twenty"
+            app:rt_view_id="@+id/cell_thirteen"
+            app:top_view_id="@+id/cell_twelve"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_twenty"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_twenty_seven"
+            app:lb_view_id="@+id/cell_twenty_six"
+            app:left_view_id="@+id/cell_nineteen"
+            app:lt_view_id="@+id/cell_twelve"
+
+            app:rb_view_id="@null"
+            app:right_view_id="@null"
+            app:rt_view_id="@null"
+            app:top_view_id="@+id/cell_thirteen"
+            />
+
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_twenty_one"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:layout_column="0"
+            android:layout_row="4"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@null"
+            app:lb_view_id="@null"
+            app:left_view_id="@null"
+            app:lt_view_id="@null"
+
+            app:rb_view_id="@null"
+            app:right_view_id="@id/cell_twenty_two"
+            app:rt_view_id="@+id/cell_fifteen"
+            app:top_view_id="@id/cell_fourteen"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_twenty_two"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@null"
+            app:lb_view_id="@null"
+            app:left_view_id="@id/cell_twenty_one"
+            app:lt_view_id="@+id/cell_fourteen"
+
+            app:rb_view_id="@+id/cell_twenty_eight"
+            app:right_view_id="@id/cell_twenty_three"
+            app:rt_view_id="@+id/cell_sixteen"
+            app:top_view_id="@id/cell_fifteen"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_twenty_three"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_twenty_eight"
+            app:lb_view_id="@null"
+            app:left_view_id="@+id/cell_twenty_two"
+            app:lt_view_id="@+id/cell_fifteen"
+
+            app:rb_view_id="@+id/cell_twenty_nine"
+            app:right_view_id="@+id/cell_twenty_four"
+            app:rt_view_id="@+id/cell_seventeen"
+            app:top_view_id="@+id/cell_sixteen"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_twenty_four"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_twenty_nine"
+            app:lb_view_id="@+id/cell_twenty_eight"
+            app:left_view_id="@+id/cell_twenty_three"
+            app:lt_view_id="@+id/cell_sixteen"
+
+            app:rb_view_id="@+id/cell_thirty"
+            app:right_view_id="@+id/cell_twenty_five"
+            app:rt_view_id="@+id/cell_eighteen"
+            app:top_view_id="@+id/cell_seventeen"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_twenty_five"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_thirty"
+            app:lb_view_id="@+id/cell_twenty_nine"
+            app:left_view_id="@+id/cell_twenty_four"
+            app:lt_view_id="@+id/cell_seventeen"
+
+            app:rb_view_id="@null"
+            app:right_view_id="@+id/cell_twenty_six"
+            app:rt_view_id="@+id/cell_nineteen"
+            app:top_view_id="@+id/cell_eighteen"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_twenty_six"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@null"
+            app:lb_view_id="@+id/cell_thirty"
+            app:left_view_id="@id/cell_twenty_five"
+            app:lt_view_id="@+id/cell_eighteen"
+
+            app:rb_view_id="@null"
+            app:right_view_id="@id/cell_twenty_seven"
+            app:rt_view_id="@+id/cell_twenty"
+            app:top_view_id="@id/cell_nineteen"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_twenty_seven"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@null"
+            app:lb_view_id="@null"
+            app:left_view_id="@id/cell_twenty_six"
+            app:lt_view_id="@+id/cell_nineteen"
+
+            app:rb_view_id="@null"
+            app:right_view_id="@null"
+            app:rt_view_id="@null"
+            app:top_view_id="@id/cell_twenty"
+            />
+
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_twenty_eight"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:layout_column="2"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_thirty_one"
+            app:lb_view_id="@null"
+            app:left_view_id="@null"
+            app:lt_view_id="@+id/cell_twenty_two"
+
+            app:rb_view_id="@+id/cell_thirty_two"
+            app:right_view_id="@+id/cell_twenty_nine"
+            app:rt_view_id="@+id/cell_twenty_four"
+            app:top_view_id="@+id/cell_twenty_three"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_twenty_nine"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:layout_column="3"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_thirty_two"
+            app:lb_view_id="@+id/cell_thirty_one"
+            app:left_view_id="@+id/cell_twenty_eight"
+            app:lt_view_id="@+id/cell_twenty_three"
+
+            app:rb_view_id="@+id/cell_thirty_three"
+            app:right_view_id="@+id/cell_thirty"
+            app:rt_view_id="@+id/cell_twenty_five"
+            app:top_view_id="@+id/cell_twenty_four"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_thirty"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:layout_column="4"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@+id/cell_thirty_three"
+            app:lb_view_id="@+id/cell_thirty_two"
+            app:left_view_id="@+id/cell_twenty_nine"
+            app:lt_view_id="@+id/cell_twenty_four"
+
+            app:rb_view_id="@null"
+            app:right_view_id="@null"
+            app:rt_view_id="@+id/cell_twenty_six"
+            app:top_view_id="@+id/cell_twenty_five"
+            />
+
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_thirty_one"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:layout_column="2"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@null"
+            app:lb_view_id="@null"
+            app:left_view_id="@null"
+            app:lt_view_id="@null"
+
+            app:rb_view_id="@null"
+            app:right_view_id="@id/cell_thirty_two"
+            app:rt_view_id="@+id/cell_twenty_nine"
+            app:top_view_id="@id/cell_twenty_eight"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_thirty_two"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:layout_column="3"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@null"
+            app:lb_view_id="@null"
+            app:left_view_id="@+id/cell_thirty_one"
+            app:lt_view_id="@+id/cell_twenty_eight"
+
+            app:rb_view_id="@null"
+            app:right_view_id="@+id/cell_thirty_three"
+            app:rt_view_id="@+id/cell_thirty"
+            app:top_view_id="@+id/cell_twenty_nine"
+            />
+
+        <com.apps.FourInRow.lab.ui.NeighborImageButton
+            android:id="@+id/cell_thirty_three"
+            android:layout_width="@dimen/cell_size"
+            android:layout_height="@dimen/cell_size"
+            android:layout_column="4"
+            android:scaleType="fitCenter"
+            app:bottom_view_id="@null"
+            app:lb_view_id="@null"
+            app:left_view_id="@id/cell_thirty_two"
+            app:lt_view_id="@+id/cell_twenty_nine"
+
+            app:rb_view_id="@null"
+            app:right_view_id="@null"
+            app:rt_view_id="@null"
+            app:top_view_id="@id/cell_thirty"
+            />
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/back_step_btn"
+        android:layout_width="@dimen/game_field_btn_width"
+        android:layout_height="@dimen/game_field_btn_height"
+        android:layout_below="@+id/field"
+        android:layout_marginStart="@dimen/game_control_button_margin_left"
+        android:layout_marginTop="@dimen/game_control_button_margin_left"
+        android:text="@string/back_step"/>
+
+    <Button
+        android:id="@+id/show_step"
+        android:layout_width="@dimen/game_field_btn_width"
+        android:layout_height="@dimen/game_field_btn_height"
+        android:layout_below="@+id/field"
+        android:layout_marginStart="@dimen/game_control_button_margin_left"
+        android:layout_marginTop="@dimen/game_control_button_margin_left"
+        android:layout_toEndOf="@+id/back_step_btn"
+        android:text="@string/show_step"/>
+
+    <Button
+        android:id="@+id/end_btn"
+        android:layout_width="@dimen/game_field_btn_width"
+        android:layout_height="@dimen/game_field_btn_height"
+        android:layout_below="@+id/back_step_btn"
+        android:layout_centerHorizontal="true"
+        android:text="@string/end"/>
+
+</RelativeLayout>

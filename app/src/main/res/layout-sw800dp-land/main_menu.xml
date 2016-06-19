@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/game_label_margin_top"
+        android:text="@string/four_in_row"
+        android:textColor="@color/game_title_text_color"
+        android:textSize="@dimen/text_size_large"/>
+
+    <Button
+        android:id="@+id/begin_play_btn"
+        android:layout_width="@dimen/btn_main_width"
+        android:layout_height="@dimen/btn_main_height"
+        android:layout_below="@+id/label"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/begin_play_btn_margin_top"
+        android:text="@string/begin_play"
+        android:textSize="@dimen/text_size_medium"/>
+
+    <Button
+        android:id="@+id/exit_btn"
+        android:layout_width="@dimen/btn_main_width"
+        android:layout_height="@dimen/btn_main_height"
+        android:layout_below="@+id/rules_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/btns_margin_top"
+        android:text="@string/exit"
+        android:textSize="@dimen/text_size_medium"/>
+
+    <Button
+        android:layout_width="@dimen/btn_main_width"
+        android:layout_height="@dimen/btn_main_height"
+        android:text="@string/game_rules"
+        android:id="@+id/rules_btn"
+        android:textSize="@dimen/text_size_medium"
+        android:layout_below="@+id/begin_play_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/btns_margin_top"/>
+</RelativeLayout>

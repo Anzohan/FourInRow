@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="game_title_text_color">#20d904</color>
+    <color name="winner_name_color">#fae01d</color>
+    <color name="computer_step_rate_text_color">#ff6262</color>
+    <color name="player_step_rate_text_color">#f1ff82</color>
+    <color name="rules_text_color">#fcd34e</color>
+    <color name="win_combo_highlight">#e2f9ed0a</color>
+</resources>

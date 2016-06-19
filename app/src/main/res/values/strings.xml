@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">4 в ряд</string>
+
+    <!--Step Rates -->
+    <string name="bad_step">Плохой ход</string>
+    <string name="normal_step">Нормальный ход</string>
+    <string name="good_step">Хороший ход</string>
+    <string name="computer_step_label">Оценка компьютеру: %1$s</string>
+    <string name="player_rate_label">Оценка вам: %1$s</string>
+
+
+    <!--Main Menu -->
+    <string name="four_in_row">4 В РЯД</string>
+    <string name="begin_play">Начать игру</string>
+    <string name="exit">Выход</string>
+    <string name="game_rules">Правила игры</string>
+
+    <!--Select Difficulty -->
+    <string name="hard">Тяжелый</string>
+    <string name="normal">Нормальный</string>
+    <string name="easy">Легкий</string>
+    <string name="choose_figure_type">Выберите фигуру</string>
+    <string name="choose_difficulty_label">Выберите уровень сложности</string>
+    <string name="error_begin_play_msg">Выберите сложность и фигуру</string>
+    <string name="play">Играть</string>
+    <string name="back">Назад</string>
+
+    <!--Game Field -->
+    <string name="cross">Крестик</string>
+    <string name="zero">Нолик</string>
+    <string name="back_step">Шаг назад</string>
+    <string name="show_step">Показать шаг</string>
+    <string name="end">Закончить</string>
+
+    <!--Winners -->
+    <string name="player_win_text">Вы победили! Ура!</string>
+    <string name="computer_win_text">Компьютер выиграл.</string>
+    <string name="draw_text">Увы, ничья.</string>
+
+    <!--Rules -->
+    <string name="rules_text">4 в ряд - это логическая игра между двумя противниками на поле,
+        содержащим любое количество ячеек.\n
+Принцип игры такой же, как в крестиках и ноликах.\n\n\n
+ 1. Один из игроков играет «крестиками», второй — «ноликами».\n\n
+ 2. Игроки по очереди ставят на свободные клетки поля свои фигуры (один всегда крестики,
+        другой всегда нолики). Первый, выстроивший в ряд 4 своих фигуры по вертикали,
+        горизонтали или диагонали, выигрывает.\n\n
+ 3. Первый ход делает игрок, ставящий крестики.</string>
+</resources>

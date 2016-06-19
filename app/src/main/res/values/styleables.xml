@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NeighborImageButton">
+        <attr name="left_view_id" format="reference"/>
+        <attr name="right_view_id" format="reference"/>
+        <attr name="top_view_id" format="reference"/>
+        <attr name="bottom_view_id" format="reference"/>
+        <attr name="lt_view_id" format="reference"/>
+        <attr name="rt_view_id" format="reference"/>
+        <attr name="lb_view_id" format="reference"/>
+        <attr name="rb_view_id" format="reference"/>
+    </declare-styleable>
+</resources>
